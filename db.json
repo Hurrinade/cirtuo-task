@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "email": "admin@test.com",
+      "password": "$2a$10$L2mALLHRgSMXP.35yVLg2umcj2rHjyz8ljsoHTWZHjeHcFo6t5HGC",
+      "type": "admin",
+      "id": 1
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$pjl5AthXCoZWjPCIPoJFJO1KEv3jAZvh7bd9XTSavXIuAW8ezQTW.",
+      "type": "user",
+      "id": 2
+    }
+  ],
+  "books": [
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "description": "A gripping, heart-wrenching, and wholly remarkable tale of coming-of-age in a South poisoned by virulent prejudice.",
+      "cover_image": "tokillamockingbird.jpg",
+      "userId": 1
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "description": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism.",
+      "cover_image": "1984.jpg",
+      "userId": 1
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "description": "A classic novel of manners that explores the British landed gentry and their struggles with issues of marriage, money, and love.",
+      "cover_image": "prideandprejudice.jpg",
+      "userId": 1
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "description": "The story of the fabulously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan, set in the Jazz Age of America.",
+      "cover_image": "thegreatgatsby.jpg",
+      "userId": 1
+    },
+    {
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "description": "A thrilling saga of adventure on the seas and a timeless tale of man’s obsession with conquering nature.",
+      "cover_image": "mobydick.jpg",
+      "userId": 1
+    },
+    {
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "description": "A historical novel that chronicles the French invasion of Russia and the impact of the Napoleonic era on Tsarist society.",
+      "cover_image": "warandpeace.jpg",
+      "userId": 1
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "cirtuo-task",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "json-server db.json -m ./node_modules/json-server-auth -r routes.json",
+    "start_server": "node server.js",
+    "format": "prettier -w -u ."
+  },
+  "dependencies": {
+    "@primevue/themes": "^4.1.1",
+    "axios": "^1.7.7",
+    "pinia": "^2.2.4",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.1.1",
+    "tailwindcss-primeui": "^0.3.4",
+    "vue": "^3.5.12",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.4",
+    "autoprefixer": "^10.4.20",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0",
+    "postcss": "^8.4.47",
+    "prettier": "3.3.3",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.8"
+  }
+}
