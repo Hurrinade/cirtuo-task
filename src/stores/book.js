@@ -34,7 +34,21 @@ export const useBookStore = defineStore('book', () => {
   }
 
   async function editBook(data) {
+    const body = { ...data, userId: user.user.id };
+
     try {
+      await axios.put(`http://localhost:3000/books/${data.id}`, body, {
+        headers: {
+          Authorization: `Bearer ${user.userToken}`,
+        },
+      });
+
+      getBooks();
+
+      return {
+        error: false,
+        msg: 'Successfully updated book',
+      };
     } catch (error) {
       if (error.response.data) {
         return {
