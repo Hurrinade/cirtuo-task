@@ -11,6 +11,7 @@
       <RouterView />
     </div>
   </main>
+  <Toast />
 </template>
 
 <script setup>

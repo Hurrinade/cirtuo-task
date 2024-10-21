@@ -34,15 +34,65 @@ export const useBookStore = defineStore('book', () => {
   }
 
   async function editBook(data) {
-    console.log(data);
+    try {
+    } catch (error) {
+      if (error.response.data) {
+        return {
+          error: true,
+          msg: error.response.data,
+        };
+      }
+    }
   }
 
   async function addBook(data) {
-    console.log('add book', data);
+    const body = { ...data, userId: user.user.id };
+
+    try {
+      await axios.post('http://localhost:3000/books', body, {
+        headers: {
+          Authorization: `Bearer ${user.userToken}`,
+        },
+      });
+
+      getBooks();
+
+      return {
+        error: false,
+        msg: 'Successfully added new book',
+      };
+    } catch (error) {
+      if (error.response.data) {
+        return {
+          error: true,
+          msg: error.response.data,
+        };
+      }
+    }
   }
 
   async function removeBook(id) {
-    console.log('book id', id);
+    try {
+      await axios.delete(`http://localhost:3000/books/${id}`, {
+        headers: {
+          Authorization: `Bearer ${user.userToken}`,
+        },
+      });
+
+      getBooks();
+
+      return {
+        error: false,
+        msg: 'Successfully removed a book',
+      };
+    } catch (error) {
+      if (error.response.data) {
+        return {
+          error: true,
+          msg: error.response.data,
+        };
+      }
+    }
   }
 
   return {

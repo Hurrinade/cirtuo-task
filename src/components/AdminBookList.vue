@@ -69,9 +69,10 @@
 <script setup>
   import { useBookStore } from '@/stores/book';
   import { storeToRefs } from 'pinia';
-  import { ref } from 'vue';
   import { useConfirm } from 'primevue/useconfirm';
+  import { useToast } from 'primevue/usetoast';
 
+  const toast = useToast();
   const confirm = useConfirm();
 
   defineProps(['books']);
@@ -96,8 +97,25 @@
         label: 'Delete',
         severity: 'danger',
       },
-      accept: () => {
-        removeBook(id);
+      accept: async () => {
+        const response = await removeBook(id);
+
+        if (response.error) {
+          toast.add({
+            severity: 'error',
+            summary: 'Error',
+            detail: response.msg,
+            life: 3000,
+          });
+          return;
+        }
+
+        toast.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: response.msg,
+          life: 3000,
+        });
       },
     });
   };

@@ -57,11 +57,7 @@
               class="w-full"
             />
             <Button
-              @click.prevent="
-                operation === 'add'
-                  ? addBook(newBookData)
-                  : editBook(newBookData)
-              "
+              @click.prevent="operationFunc"
               type="submit"
               :label="operation === 'add' ? 'Add' : 'Update'"
               class="w-full"
@@ -78,10 +74,15 @@
   import { useBookStore } from '@/stores/book';
   import { storeToRefs } from 'pinia';
   import { reactive, computed } from 'vue';
+  import { useToast } from 'primevue/usetoast';
+
+  const toast = useToast();
 
   const props = defineProps(['operation']);
-
   const bookStore = useBookStore();
+  const { selectedBook, isOpenBookEdit } = storeToRefs(bookStore);
+  // Get reactive variables from store
+  const { editBook, addBook } = bookStore;
 
   const disableButton = computed(() => {
     return (
@@ -92,9 +93,35 @@
     );
   });
 
-  // Get reactive variables from store
-  const { selectedBook, isOpenBookEdit } = storeToRefs(bookStore);
-  const { editBook, addBook } = bookStore;
+  const operationFunc = async () => {
+    let response = null;
+
+    if (props.operation === 'add') {
+      response = await addBook(newBookData);
+    } else {
+      response = await editBook(newBookData);
+    }
+
+    if (response.error) {
+      toast.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: response.msg,
+        life: 3000,
+      });
+      return;
+    }
+
+    toast.add({
+      severity: 'success',
+      summary: 'Success',
+      detail: response.msg,
+      life: 3000,
+    });
+    selectedBook.value = null;
+    isOpenBookEdit.value = false;
+  };
+
   const newBookData = reactive(
     props.operation === 'add'
       ? { title: '', author: '', description: '', cover_image: '' }

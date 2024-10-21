@@ -21,7 +21,10 @@ import TabPanel from 'primevue/tabpanel';
 import Textarea from 'primevue/textarea';
 import Menu from 'primevue/menu';
 import ConfirmDialog from 'primevue/confirmdialog';
+import Toast from 'primevue/toast';
+
 import ConfirmationService from 'primevue/confirmationservice';
+import ToastService from 'primevue/toastservice';
 
 import App from './App.vue';
 import router from './router';
@@ -42,9 +45,11 @@ app.use(PrimeVue, {
 app.use(createPinia());
 app.use(router);
 app.use(ConfirmationService);
+app.use(ToastService);
 
 // PrimeVue Components
 app.component('InputGroupAddon', InputGroupAddon);
+app.component('Toast', Toast);
 app.component('ConfirmDialog', ConfirmDialog);
 app.component('Textarea', Textarea);
 app.component('Menu', Menu);
