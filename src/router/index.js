@@ -37,16 +37,6 @@ router.beforeEach((to, from) => {
   } else if (userStore.userToken && to.name === 'auth') {
     return { name: '/' };
   }
-
-  // this route requires condition to be accessed
-  // if not, redirect to home page.
-  // if (false) {
-  //   //check codition is false
-  //   next({ path: '/' })
-  // } else {
-  //   //check codition is true
-  //   next()
-  // }
 });
 
 export default router;

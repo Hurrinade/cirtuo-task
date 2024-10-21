@@ -13,7 +13,9 @@
 ### Users
 
 ```
-ADMIN - can only be added from backend cannot be registered from frontend
+ADMIN - can only be added from backend cannot be registered from frontend, good because admin can as upgrade have ACL to manage users and their permisions
+USER - can only see books
+
 email: admin@test.com
 password: password
 
@@ -41,3 +43,8 @@ To run server
 ```
 npm run start
 ```
+
+
+TODO 
+
+fix user can add delete and edit and he is not admin

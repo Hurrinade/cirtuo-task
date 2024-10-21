@@ -7,13 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "json-server db.json -m ./node_modules/json-server-auth -r routes.json",
+    "start": "json-server-auth -w db.json -r routes.json",
     "start_server": "node server.js",
     "format": "prettier -w -u ."
   },
   "dependencies": {
     "@primevue/themes": "^4.1.1",
     "axios": "^1.7.7",
+    "jsonwebtoken": "^9.0.2",
     "pinia": "^2.2.4",
     "primeicons": "^7.0.0",
     "primevue": "^4.1.1",

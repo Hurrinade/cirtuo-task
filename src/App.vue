@@ -49,6 +49,8 @@
 
   const items = computed(() => {
     return routes.filter((route) => {
+      return route;
+
       if (user.value.type === 'user' && route.label !== 'Admin Panel') {
         return route;
       } else if (user.value.type === 'admin') {
