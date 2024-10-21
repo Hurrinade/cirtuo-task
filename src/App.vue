@@ -28,34 +28,33 @@
 
   const routes = [
     {
-        label: 'Bookstore',
-        icon: 'pi pi-home',
-        command: () => {
-          router.push('/');
-        }
+      label: 'Bookstore',
+      icon: 'pi pi-home',
+      command: () => {
+        router.push('/');
+      },
     },
     {
-        label: 'Admin Panel',
-        icon: 'pi pi-shield',
-        command: () => {
-          router.push('/admin');
-        }
-    }
-]
+      label: 'Admin Panel',
+      icon: 'pi pi-shield',
+      command: () => {
+        router.push('/admin');
+      },
+    },
+  ];
 
   // Get functions from store
   const { getBooks } = bookStore;
 
   const items = computed(() => {
     return routes.filter((route) => {
-      if (user.value.type === 'user' && route.label !== 'Admin Panel')
-      {
+      if (user.value.type === 'user' && route.label !== 'Admin Panel') {
         return route;
       } else if (user.value.type === 'admin') {
         return route;
-      }      
-    })
-  })
+      }
+    });
+  });
 
   // Check if user is authenticated and reroute depanding on that
   watch(

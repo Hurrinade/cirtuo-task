@@ -8,6 +8,7 @@
 - There is also debuger setup and prettier setup for this project
 - I have installed json-server and json-server-auth to fake server and its authentication, everything is in db.json and routes.json files
 - I did really simple validation for login and register did not want to overcomplicate things
+- I am using vue router for routing
 
 ### Users
 
@@ -22,8 +23,8 @@ password: password
 ```
 
 - As I used json-server-auth my role system is based on that package capabilities (it simulates those options)
-    - user with email admin@gmail.com can only change book information
-    - as jwt has userId that userId is connected to operations which he can do on books
+  - user with email admin@gmail.com can only change book information
+  - as jwt has userId that userId is connected to operations which he can do on books
 
 Usually I would create httpOnly cookie with token and some expire time on server and use that cookie to check if user is logged in etc.. Right now as I am using basic json-server auth it is not storing token in a cookie
 
@@ -40,5 +41,3 @@ To run server
 ```
 npm run start
 ```
-
-

@@ -8,11 +8,15 @@ export const useUserStore = defineStore('user', () => {
 
   async function login(userData) {
     try {
-      const response = await axios.post('http://localhost:3000/login', userData, {
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await axios.post(
+        'http://localhost:3000/login',
+        userData,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
         },
-      });
+      );
 
       userToken.value = response.data.accessToken;
       user.value = response.data.user;

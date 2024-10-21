@@ -39,7 +39,6 @@
   import { useBookStore } from '@/stores/book';
   import { storeToRefs } from 'pinia';
 
-  defineProps(['books']);
   const bookStore = useBookStore();
 
   // Get reactive variables from store

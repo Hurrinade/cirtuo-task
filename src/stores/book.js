@@ -7,18 +7,17 @@ export const useBookStore = defineStore('book', () => {
   const books = ref([]);
   const selectedBook = ref(null);
   const user = useUserStore();
+  const isOpenBookEdit = ref(false);
 
   async function getBooks() {
     try {
-      const data = await axios.get('http://localhost:3000/books',
-        {
-          headers: {
-            Authorization: `Bearer ${user.userToken}`
-          }
-        }
-      );
+      const data = await axios.get('http://localhost:3000/books', {
+        headers: {
+          Authorization: `Bearer ${user.userToken}`,
+        },
+      });
 
-      books.value = data.data
+      books.value = data.data;
 
       return {
         error: false,
@@ -34,5 +33,25 @@ export const useBookStore = defineStore('book', () => {
     }
   }
 
-  return { books, selectedBook, getBooks };
+  async function editBook(data) {
+    console.log(data);
+  }
+
+  async function addBook(data) {
+    console.log('add book', data);
+  }
+
+  async function removeBook(id) {
+    console.log('book id', id);
+  }
+
+  return {
+    books,
+    selectedBook,
+    isOpenBookEdit,
+    getBooks,
+    editBook,
+    addBook,
+    removeBook,
+  };
 });

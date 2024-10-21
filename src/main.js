@@ -18,7 +18,10 @@ import TabList from 'primevue/tablist';
 import Tab from 'primevue/tab';
 import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
+import Textarea from 'primevue/textarea';
 import Menu from 'primevue/menu';
+import ConfirmDialog from 'primevue/confirmdialog';
+import ConfirmationService from 'primevue/confirmationservice';
 
 import App from './App.vue';
 import router from './router';
@@ -38,9 +41,12 @@ app.use(PrimeVue, {
 
 app.use(createPinia());
 app.use(router);
+app.use(ConfirmationService);
 
 // PrimeVue Components
 app.component('InputGroupAddon', InputGroupAddon);
+app.component('ConfirmDialog', ConfirmDialog);
+app.component('Textarea', Textarea);
 app.component('Menu', Menu);
 app.component('InputGroup', InputGroup);
 app.component('DataView', DataView);
