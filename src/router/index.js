@@ -13,7 +13,11 @@ const router = createRouter({
       meta: { role: 'user' },
       component: BookView,
     },
-    // Create Go back button on component which will go to last route
+    // {
+    //   path: '/book/:id',
+    //   name: 'book', 
+    //   component: BookDetail
+    // },
     {
       path: '/auth',
       name: 'auth',
