@@ -9,6 +9,7 @@
 - I have installed json-server and json-server-auth to fake server and its authentication, everything is in db.json and routes.json files
 - I did really simple validation for login and register did not want to overcomplicate things
 - I am using vue router for routing
+- Tests were made with vitest which is basically jest with supportfor es modules
 
 ### Users
 
@@ -32,14 +33,32 @@ Usually I would create httpOnly cookie with token and some expire time on server
 
 ## How to run
 
-To run application
+First do
 
 ```
-npm run dev
+npm install
 ```
 
 To run server
 
 ```
 npm run start_server
+```
+
+To run application
+
+```
+npm run dev
+```
+
+To run test
+
+```
+npm run test
+```
+
+To format code
+
+```
+npm run format
 ```

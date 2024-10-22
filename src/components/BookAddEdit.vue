@@ -41,7 +41,7 @@
             />
           </InputGroup>
           <br />
-          <Textarea v-model="newBookData.description" rows="5" cols="60" />
+          <Textarea v-model="newBookData.description" rows="5" cols="50" />
           <br />
           <div class="flex gap-4 mt-1">
             <Button

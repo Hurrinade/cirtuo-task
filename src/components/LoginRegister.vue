@@ -47,10 +47,10 @@
   const { login, register } = user;
 
   // Remove when finished
-  const userData = reactive({
+  const userData = reactive(props.type === 'login' ? {
     email: 'admin@test.com',
     password: 'password',
-  });
+  } : {email: '', password: ''});
   const errorMessage = ref('');
 
   const submit = async () => {

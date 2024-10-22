@@ -45,7 +45,7 @@ export const useBookStore = defineStore('book', () => {
         },
       });
 
-      getBooks();
+      await getBooks();
 
       return {
         error: false,
@@ -72,7 +72,7 @@ export const useBookStore = defineStore('book', () => {
         },
       });
 
-      getBooks();
+      await getBooks();
 
       return {
         error: false,
@@ -97,7 +97,7 @@ export const useBookStore = defineStore('book', () => {
         },
       });
 
-      getBooks();
+      await getBooks();
 
       return {
         error: false,
