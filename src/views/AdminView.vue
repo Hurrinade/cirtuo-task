@@ -1,7 +1,7 @@
 <template>
   <main class="flex flex-col items-center">
     <h1 class="text-3xl font-semibold">Admin Panel</h1>
-    <div class="flex">
+    <div class="flex flex-col sm:flex-row">
       <SearchBox class="m-10" v-model="bookSearchString" />
       <Button
         icon="pi pi-plus"
