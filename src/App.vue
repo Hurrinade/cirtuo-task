@@ -42,6 +42,13 @@
         router.push('/admin');
       },
     },
+    {
+      label: 'Logout',
+      icon: 'pi pi-power-off',
+      command: () => {
+        location.reload();
+      },
+    },
   ];
 
   // Get functions from store
@@ -49,8 +56,6 @@
 
   const items = computed(() => {
     return routes.filter((route) => {
-      return route;
-
       if (user.value.type === 'user' && route.label !== 'Admin Panel') {
         return route;
       } else if (user.value.type === 'admin') {

@@ -61,22 +61,6 @@
       "cover_image": "warandpeace.jpg",
       "userId": 1,
       "id": 6
-    },
-    {
-      "title": "dd",
-      "author": "d",
-      "description": "d",
-      "cover_image": "d",
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "title": "d",
-      "author": "d",
-      "description": "d",
-      "cover_image": "d",
-      "userId": 1,
-      "id": 9
     }
   ]
 }
