@@ -27,6 +27,13 @@ export const useUserStore = defineStore('user', () => {
         msg: '',
       };
     } catch (error) {
+      if (!error.response) {
+        return {
+          error: true,
+          msg: 'Internal server error'
+        }
+      }
+
       if (error.response.data) {
         return {
           error: true,
@@ -57,6 +64,13 @@ export const useUserStore = defineStore('user', () => {
         msg: '',
       };
     } catch (error) {
+      if (!error.response) {
+        return {
+          error: true,
+          msg: 'Internal server error'
+        }
+      }
+
       if (error.response.data) {
         return {
           error: true,
