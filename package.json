@@ -7,7 +7,6 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "json-server-auth -w db.json -r routes.json",
     "start_server": "node server.js",
     "format": "prettier -w -u ."
   },

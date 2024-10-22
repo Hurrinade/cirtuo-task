@@ -1,17 +1,13 @@
 import jsonServer from 'json-server';
 import auth from 'json-server-auth';
 import cors from 'cors';
-import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken';
 
 const app = jsonServer.create();
 const router = jsonServer.router('db.json');
 
 import { readFile } from 'fs/promises';
-const db = JSON.parse(
-  await readFile(
-    new URL('./db.json', import.meta.url)
-  )
-);
+const db = JSON.parse(await readFile(new URL('./db.json', import.meta.url)));
 
 // /!\ Bind the router db to the app
 app.db = router.db;
@@ -44,7 +40,7 @@ function checkRolePermision(req, res, next) {
       }
     }
 
-    throw Error('User is not authorized for this')
+    throw Error('User is not authorized for this');
   } catch (error) {
     res.status(401).jsonp(error.message);
   }

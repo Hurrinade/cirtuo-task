@@ -32,6 +32,7 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   const userStore = useUserStore();
 
+  // Filter routes depending on if user is authenticated or not
   if (!userStore.userToken && to.name !== 'auth') {
     return { name: 'auth' };
   } else if (userStore.userToken && to.name === 'auth') {

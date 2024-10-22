@@ -6,5 +6,6 @@
 </template>
 
 <script setup>
+  // Model for search string from parent component
   const model = defineModel();
 </script>

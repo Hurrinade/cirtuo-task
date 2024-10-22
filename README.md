@@ -41,10 +41,5 @@ npm run dev
 To run server
 
 ```
-npm run start
+npm run start_server
 ```
-
-
-TODO 
-
-fix user can add delete and edit and he is not admin

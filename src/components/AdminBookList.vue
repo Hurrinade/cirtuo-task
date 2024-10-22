@@ -82,6 +82,7 @@
   const { selectedBook, isOpenBookEdit } = storeToRefs(bookStore);
   const { removeBook } = bookStore;
 
+  // Confirmation function for delete
   const confirmFunc = (id) => {
     confirm.require({
       message: 'Do you want to delete this book?',

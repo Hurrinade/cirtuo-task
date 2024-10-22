@@ -84,6 +84,7 @@
   // Get reactive variables from store
   const { editBook, addBook } = bookStore;
 
+  // Disable button if there is missing book data
   const disableButton = computed(() => {
     return (
       !newBookData.title ||
@@ -93,6 +94,7 @@
     );
   });
 
+  // Based on operation function determines to create new book or update existing one
   const operationFunc = async () => {
     let response = null;
 
@@ -122,6 +124,7 @@
     isOpenBookEdit.value = false;
   };
 
+  // Set data for add or edit function
   const newBookData = reactive(
     props.operation === 'add'
       ? { title: '', author: '', description: '', cover_image: '' }

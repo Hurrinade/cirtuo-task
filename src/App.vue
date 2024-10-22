@@ -15,6 +15,7 @@
 </template>
 
 <script setup>
+  // Root component which displays menu for user, and content depending on router
   import { RouterView, useRouter } from 'vue-router';
   import { useBookStore } from '@/stores/book';
   import { useUserStore } from '@/stores/user';
@@ -27,6 +28,7 @@
 
   const { userToken, user } = storeToRefs(userStore);
 
+  // Routes for user menu
   const routes = [
     {
       label: 'Bookstore',
@@ -54,6 +56,7 @@
   // Get functions from store
   const { getBooks } = bookStore;
 
+  // Items filtered based on user type
   const items = computed(() => {
     return routes.filter((route) => {
       if (user.value.type === 'user' && route.label !== 'Admin Panel') {

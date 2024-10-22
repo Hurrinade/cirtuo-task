@@ -6,6 +6,7 @@ export const useUserStore = defineStore('user', () => {
   const userToken = ref(null);
   const user = ref(null);
 
+  // Login for existing users
   async function login(userData) {
     try {
       const response = await axios.post(
@@ -35,6 +36,7 @@ export const useUserStore = defineStore('user', () => {
     }
   }
 
+  // Registration for new user
   async function register(userData) {
     try {
       const token = await axios.post(

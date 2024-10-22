@@ -4,11 +4,12 @@ import axios from 'axios';
 import { useUserStore } from './user';
 
 export const useBookStore = defineStore('book', () => {
-  const books = ref([]);
-  const selectedBook = ref(null);
-  const user = useUserStore();
-  const isOpenBookEdit = ref(false);
+  const books = ref([]); // List of books
+  const selectedBook = ref(null); // Selected book for edit
+  const user = useUserStore(); // user data
+  const isOpenBookEdit = ref(false); // variable to show and hide edit popup
 
+  // Function to retreive books
   async function getBooks() {
     try {
       const data = await axios.get('http://localhost:3000/books', {
@@ -33,6 +34,7 @@ export const useBookStore = defineStore('book', () => {
     }
   }
 
+  // Function to edit book data
   async function editBook(data) {
     const body = { ...data, userId: user.user.id };
 
@@ -59,6 +61,7 @@ export const useBookStore = defineStore('book', () => {
     }
   }
 
+  // Function to create new book
   async function addBook(data) {
     const body = { ...data, userId: user.user.id };
 
@@ -85,6 +88,7 @@ export const useBookStore = defineStore('book', () => {
     }
   }
 
+  // Function to remove book
   async function removeBook(id) {
     try {
       await axios.delete(`http://localhost:3000/books/${id}`, {
